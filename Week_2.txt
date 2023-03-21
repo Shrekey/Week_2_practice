@@ -1,0 +1,483 @@
+1.WAP To print sum and avg
+
+import java.util.Scanner;
+
+class Example4 {
+  public static void main(String[] args) {
+    Scanner ip = new Scanner(System.in);
+    System.out.println("enter first");
+    int x = ip.nextInt();
+    System.out.println("enter Second");
+    int y = ip.nextInt();
+    System.out.println("enter third");
+    int z = ip.nextInt();
+    System.out.println("Sum of subjects " + (x + y + z));
+    System.out.println("Avg of subjects " + (x + y + z / 3));
+  }
+}
+
+2.WAP To print current bill
+
+import java.util.Scanner;
+
+class Example5{
+  public static void main(String[] args){
+    Scanner ip=new Scanner(System.in);
+    System.out.println("Enter the basic salary");
+    int Basic=ip.nextInt();
+    System.out.println("Enter 1");
+    int bill1=ip.nextInt();
+    System.out.println("Enter 2");
+    int bill2=ip.nextInt();
+    System.out.println("Enter 3");
+    int bill3=ip.nextInt();
+    int w=bill1+bill2+bill3;
+    System.out.println("Total Shopping amount "+(bill1+bill2+bill3));
+    System.out.println("Total amount spent for shopping  "+((Basic*w)/100));
+    
+  } 
+}
+
+
+
+3.WAP To print subject marks
+
+import java.util.Scanner;
+
+class Example7{
+  
+  public static void main(String[] args){
+     
+        Scanner ip=new Scanner(System.in);
+        System.out.println("Enter practicle marks");
+        int p=ip.nextInt();
+        System.out.println("enter internal marks");
+        int i=ip.nextInt();
+        System.out.println("enter external marks");
+        int e=ip.nextInt();
+        int sum=0;
+        int Totalscore=0;
+
+        if (p>=50&&i>=50&&e>=50) {
+            sum=p+i+e;
+            System.out.println(sum);
+            Totalscore=((70*p/100)+(20*i/100)+(10*e/100));
+            System.out.println(Totalscore);
+        if (Totalscore>=90) {
+        System.out.println("A grade");
+       }if (Totalscore>=70) {
+        System.out.println("B Grade");
+       }if (Totalscore>=50) {
+        System.out.println("C grade");
+       }
+    }else{
+        if (p<50){
+            System.out.println("Failed in Practicles "+p);
+        }if (i<50) {
+            System.out.println("Failed in Internals "+i);
+        }if (e<50) {
+            System.out.println("failed in externals "+e);
+        }
+    }
+  }
+}
+
+4.WAP To print prime number
+
+import java.util.Scanner;
+
+class Example10 {
+  public static void main(String[] args) {
+    Scanner ip = new Scanner(System.in);
+    System.out.println("Enter the number");
+    int n = ip.nextInt();
+    int i = 1;
+    int c = 0;
+    while (i <= n) {
+      if (n % i == 0) {
+        c++;
+      }
+      i++;
+    }
+    if (c == 2) {
+      System.out.println("NUmber is prime  " + n);
+    } else {
+      System.out.println("NUmber is not prime  " + n);
+    }
+  }
+}
+
+
+5.WAP To print number greater than other
+
+import java.util.Scanner;
+
+class Second{
+  public static void main(String[] args) {
+    int n;  
+    Scanner sc=new Scanner(System.in);  
+    System.out.print("Enter the number of elements you want to store: ");  
+    n=sc.nextInt();  
+   
+    int[] arr = new int[n];  
+    System.out.println("Enter the elements of the array: ");  
+    for(int i=0; i<n; i++)  
+    {  
+      arr[i]=sc.nextInt();  
+    }  
+    int max=arr[0];
+    int max2=arr[0];
+    for (int i = 0; i < arr.length; i++) {
+ 
+        if (arr[i] > max) {
+          max2= max;
+          max= arr[i];
+   
+        } else if (arr[i] > max2) {
+          max2= arr[i];
+   
+        }
+      
+    }
+
+    System.out.println("maximum number is---->"+max);
+    System.out.println("Second max number is------>"+max2);
+  }
+}
+==================================================================================
+PROJECTS:
+==================================================================================
+
+
+1. Hotel managment System
+
+import java.util.Scanner;
+
+public class Hotel1 {
+  Scanner S = new Scanner(System.in);
+  int amt = 0;
+  double gst = 0;
+  double total = 0;
+  double b1;
+
+  void bal(double b) {
+    b1 = +b;
+
+  }
+
+  public void Welcome() {
+    System.out.println("<---------Welcome to Hotel Sarovar-------->");
+    boolean flag = true;
+    while (flag) {
+
+      System.out.println("Enter the Choice---->\n1.Veg\n2.Non-veg\n3.Payment");
+      System.out.println("****************************************************");
+      int choice = S.nextInt();
+
+      if (choice == 1) {
+        System.out.println(" 1.Veg Biryani and hot Sauce");
+        System.out.println(" 2.Paneer manchuri ");
+        System.out.println(" 3.North Indian Thali");
+        System.out.println("*****Enter the order*****");
+        int order = S.nextInt();
+        switch (order) {
+          case 1: {
+            amt = 100;
+            gst = (amt * 0.3);
+            total = (amt + gst);
+            System.out.println("Ordered Veg Biryani and hot Sauce-->" + total);
+            System.out.println("Enter the Quantity ");
+            int a = S.nextInt();
+            System.out.println("The total amount is Rps:" + (total * a));
+            bal(total * a);
+            break;
+          }
+          case 2: {
+            amt = 200;
+            gst = (amt * 0.3);
+            total = (amt + gst);
+            System.out.println("Paneer manchuri-->" + total);
+            System.out.println("Enter the Quantity ");
+            int a = S.nextInt();
+            System.out.println("The total amount is Rps:" + (total * a));
+            bal(total * a);
+            break;
+          }
+          case 3: {
+            amt = 400;
+            gst = (amt * 0.3);
+            total = (amt + gst);
+            System.out.println("North Indian Thali-->" + total);
+            System.out.println("Enter the Quantity ");
+            int a = S.nextInt();
+            System.out.println("The total amount is Rps:" + (total * a));
+            bal(total * a);
+            break;
+          }
+
+          default: {
+            System.out.println("Sorry not avail");
+
+          }
+        }
+      } else if (choice == 2) {
+        System.out.println(" 1.Chicken Biryani and Kabab ");
+        System.out.println(" 2.Fish fry ");
+        System.out.println(" 3.Non Masthi");
+        System.out.println("*****Enter the order*****");
+        int order = S.nextInt();
+        switch (order) {
+
+          case 1: {
+            amt = 300;
+            gst = (amt * 0.4);
+            total = (amt + gst);
+            System.out.println("Chicken Biryani and Kabab-->" + total);
+            System.out.println("Enter the Quantity ");
+            int a = S.nextInt();
+            System.out.println("The total amount is Rps:" + (total * a));
+            bal(total * a);
+            break;
+          }
+          case 2: {
+            amt = 600;
+            gst = (amt * 0.4);
+            total = (amt + gst);
+            System.out.println("Fish fry-->" + total);
+            System.out.println("Enter the Quantity ");
+            int a = S.nextInt();
+            System.out.println("The total amount is Rps:" + (total * a));
+            bal(total * a);
+            break;
+          }
+          case 3: {
+            amt = 1000;
+            gst = (amt * 0.4);
+            total = (amt + gst);
+            System.out.println("Non Masthi-->" + total);
+            System.out.println("Enter the Quantity ");
+            int a = S.nextInt();
+            System.out.println("The total amount is Rps:" + (total * a));
+            bal(total * a);
+            break;
+          }
+
+          default: {
+            System.out.println("Sorry not avail");
+          }
+        }
+
+      }
+      if (choice == 3) {
+        System.out.println("The total amount to pay: " + b1);
+        System.out.println("How would you like to pay\n1.Cash\n2.Phonepe\n3.Googlepay");
+        flag = false;
+        System.out.println("**************$ THANKYOU VISIT AGAIN $************");
+      }
+    }
+  }
+
+  public static void main(String[] args) {
+    Hotel1 hot = new Hotel1();
+    hot.Welcome();
+  }
+}
+
+
+2. Bank Atm Working process
+
+import java.util.Scanner;
+
+public class Bank {
+
+	Scanner s = new Scanner(System.in);
+	double acbal = 10000;
+	int c = 0;
+
+	public void deposite() {
+		System.out.println("Enter deposite amount");
+		int amount = s.nextInt();
+		if (amount % 100 == 0) {
+			if (amount <= 50000) {
+				acbal = acbal + amount;
+				System.out.println("available bal: " + acbal);
+			} else {
+				System.out.println("not allowed more than 50000");
+			}
+		} else {
+			System.out.println("invalid amount");
+		}
+	}
+
+	public void Withdraw() {
+		System.out.println("Enter the amount to be withdraw");
+
+		int amount = s.nextInt();
+
+		if (amount % 100 == 0) {
+			if (amount <= (acbal - 500)) {
+				if (amount <= 20000) {
+					int m1 = 0, m2 = 0;
+					System.out.println("Withdraw amount is " + amount);
+					m1 = amount / 100;
+					if (m1 == 5) {
+						System.out.println("500 notes 1"  );
+					} 
+					else if (m1 > 5 && m1 <= 10) {
+						if (m1 == 10) {
+							System.out.println("500 notes 2" );
+						} 
+						else
+						if(amount<1000) {
+						m2 = amount - 500;
+						System.out.println("500 : 1 & "+" 100:"+(m2/100));
+						}	
+					}
+					else if (m1 > 10 && m1 <= 15) {
+						if (m1 == 15) {
+							System.out.println("500 notes " );
+						} 
+						if(amount<1500) {
+						m2 = amount - 1000;
+						System.out.println("500 : 2 & "+" 100:"+(m2/100));
+						}	
+					}
+					else if (m1 > 15 && m1 <= 20) {
+						if (m1 == 20) {
+							System.out.println("500 notes 4" );
+						} 
+						if(amount<2000) {
+						m2 = amount - 1500;
+						System.out.println("500 : 3 & "+" 100:"+(m2/100));
+						}	
+					}
+					else {
+						System.out.println("100 notes" + m1);
+					}
+					acbal = acbal - amount;
+					c++;
+					System.out.println("available bal : " + acbal);
+
+				} else {
+					System.out.println("Please enter amount less than 20000");
+				}
+
+			} else {
+				System.out.println("Exceeding min Balance");
+			}
+
+		} else {
+			System.out.println("Enter multiples of 100's");
+		}
+
+	}
+
+	public void Balance() {
+		System.out.println("Avalable account balance is----->" + acbal);
+	}
+
+	public void viewOptions() {
+
+		System.out.println("======Welcome to ABC Bank========");
+		while (true) {
+			System.out.println("1. Deposite");
+			System.out.println("2. Withdraw");
+			System.out.println("3. Bal Enquiry");
+			System.out.println("0. EXIT");
+			System.out.println("Choose your option");
+			int option = s.nextInt();
+
+			switch (option) {
+			case 1: {
+				deposite();
+				break;
+			}
+			case 2: {
+				if (c < 3) {
+					Withdraw();
+				} else {
+					System.out.println("Limit Exceeded");
+				}
+				break;
+			}
+			case 3: {
+				Balance();
+				break;
+			}
+			case 0: {
+				System.out.println("**********Thank You  <____>  Vist Again***********");
+				System.exit(0);
+				break;
+
+			}
+
+			default: {
+				System.out.println("Invalid option");
+			}
+			}
+			System.out.println("**********************************");
+		}
+	}
+
+	public void validate() {
+
+		System.out.println("Enter pin");
+		int c = 0;
+		for (int i = 1; i <= 3; i++) {
+
+			int pin = s.nextInt();
+			if (pin == 1234) {
+				viewOptions();
+			} else if (pin != 1234) {
+				c++;
+				System.out.println("enter the correct pin");
+			}
+		}
+		if (c == 3) {
+			System.out.println("*********Your card is blocked for a Day******");
+		}
+	}
+
+	public static void main(String[] args) {
+		Bank obj = new Bank();
+		obj.validate();
+
+	}
+
+}
+
+
+3.Salary TDA calculator
+
+import java.util.Scanner;
+
+public class Salary {
+
+	Scanner S = new Scanner(System.in);// instance variable
+
+	public void Intake() {
+		System.out.println("Enter the Salary");
+
+		long amount = S.nextLong();
+		if (amount <= 700000) {
+			System.out.println("Salary is-->"+amount+"  No TDS");
+		} else if (amount >= 70000 && amount <= 1000000) {
+			System.out.println("Salary is-->"+amount+"  Tax Applied--->" + (amount * 0.05));
+		} else if (amount >= 1000000 && amount <= 1300000) {
+			System.out.println("Salary is-->"+amount+"  Tax Applied--->" + (amount * 0.1));
+		} else if (amount >= 1300000 && amount <= 1600000) {
+			System.out.println("Salary is-->"+amount+"  Tax Applied--->" + (amount * 0.15));
+		} else if (amount >= 1600000 && amount <= 1900000) {
+			System.out.println("Salary is-->"+amount+"  Tax Applied--->" + (amount * 0.2));
+		} else {
+			System.out.println("Salary is-->"+amount+"  Tax Applied--->" + (amount * 0.3));
+		}
+
+	}
+
+	public static void main(String[] args) {
+		Salary obj = new Salary();
+		obj.Intake();
+	}
+}
+
